@@ -1,2 +1,2 @@
-# generator-weixin
-weixin(wechat) app generator
+# generator-wxapp
+wechat(weixin) app generator
