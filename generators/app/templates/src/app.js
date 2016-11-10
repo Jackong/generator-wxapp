@@ -1,12 +1,17 @@
-import sdk, { app } from 'wxappy';
+import appy, { app } from 'wxappy';
 
 @app
 export default class {
-  onLaunch = () => {
-  }
-  getUserInfo = () => {
-    return sdk
+  data = {}
+  getUserInfo() {
+    if (this.data.user) {
+      return Promise.resolve(this.data.user);
+    }
+    return appy
     .getUserInfo()
-    .then(({ userInfo }) => userInfo);
+    .then(({ userInfo }) => {
+      this.data.user = userInfo;
+      return this.data.user;
+    });
   }
 }

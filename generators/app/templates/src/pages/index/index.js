@@ -1,17 +1,30 @@
-import sdk, { page } from 'wxappy';
+import appy, { page } from 'wxappy';
 import styles from './index.css';
 
 @page
 export default class Index {
   constructor() {
     this.data = {
-      userInfo: {},
+      user: {},
       styles,
+      button: {
+        type: 'primary',
+        name: 'Toast',
+        onTap: 'onTap',
+      },
     };
   }
+  onTap() {
+    appy.showToast({
+      title: `Hello ${this.data.user.nickName}`,
+      icon: 'success',
+    });
+  }
   onLoad() {
-    sdk.app
+    appy.app
     .getUserInfo()
-    .then(userInfo => this.setData({ userInfo }));
+    .then((user) => {
+      this.setData({ user });
+    });
   }
 }

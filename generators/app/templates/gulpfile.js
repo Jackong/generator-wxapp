@@ -26,7 +26,7 @@ gulp.task('xml', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(['src/**/*.js', 'src/**/*.css'], ['webpack']);
+  gulp.watch('src/**/*.{js,css}', ['webpack']);
   gulp.watch('src/**/*.json', ['json']);
   gulp.watch('src/**/*.xml', ['xml']);
 });

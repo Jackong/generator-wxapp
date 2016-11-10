@@ -11,7 +11,8 @@
     "App": true,
     "Page": true,
     "wx": true,
-    "getApp": true
+    "getApp": true,
+    "getCurrentPages": true
   },
   "env": {
     "browser": true,

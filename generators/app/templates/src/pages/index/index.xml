@@ -1,12 +1,8 @@
+<import src="../../templates/button" />
 <view class="{{styles.container}}">
-  <view>
-    <input placeholder="粤B-12345" auto-focus/>
+  <view class="{{styles.user}}">
+    <image class="{{styles.avatar}}" src="{{user.avatarUrl}}" background-size="cover"></image>
+    <text class="{{styles.nick}}">{{user.nickName}}</text>
   </view>
-  <view  bindtap="bindViewTap" class="{{styles.userinfo}}">
-    <image class="{{styles.avatar}}" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="{{styles.nickname}}">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <template is="button" data="{{styles, ...button }}" />
 </view>

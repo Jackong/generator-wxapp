@@ -1,8 +1,7 @@
-.container {
-  composes: container from '../../app.css';
-}
+@import '../../app.css';
+@import '../../templates/button.css';
 
-.userinfo {
+.user {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,10 +14,6 @@
   border-radius: 50%;
 }
 
-.nickname {
+.nick {
   color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
 }
