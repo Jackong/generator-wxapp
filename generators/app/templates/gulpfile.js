@@ -1,10 +1,13 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const rename = require('gulp-rename');
+const del = require('del');
 
 const config = require('./webpack.config');
 
 const dist = 'dist';
+
+gulp.task('clean', () => del([dist]));
 
 gulp.task('webpack', () => {
   return gulp.src(['src/**/*.js'], { base: 'src' })
@@ -30,3 +33,5 @@ gulp.task('watch', () => {
   gulp.watch('src/**/*.json', ['json']);
   gulp.watch('src/**/*.xml', ['xml']);
 });
+
+gulp.task('build', ['webpack', 'json', 'xml']);

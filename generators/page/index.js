@@ -14,17 +14,17 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     this.fs.copy(
       this.templatePath('page.js'),
-      this.destinationPath(`src/pages/${this.name}/${this.name}.js`)
+      this.destinationPath(`src/pages/${this.name}.js`)
     );
 
     this.fs.copy(
       this.templatePath('page.css'),
-      this.destinationPath(`src/pages/${this.name}/${this.name}.css`)
+      this.destinationPath(`src/pages/${this.name}.css`)
     );
 
     this.fs.copy(
       this.templatePath('page.xml'),
-      this.destinationPath(`src/pages/${this.name}/${this.name}.xml`)
+      this.destinationPath(`src/pages/${this.name}.xml`)
     );
   },
 });

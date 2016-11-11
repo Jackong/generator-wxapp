@@ -2,13 +2,10 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const precss = require('precss');
 const autoprefixer = require('autoprefixer');
-const mqpacker = require('css-mqpacker');
-const cssnano = require('cssnano');
 const app = require('./src/app.json');
 
 const entry = {
   app: [
-    'es6-promise/auto',
     './src/app.js',
   ],
 };
@@ -36,8 +33,6 @@ module.exports = {
         },
       }),
       autoprefixer,
-      mqpacker,
-      cssnano,
     ];
   },
   module: {

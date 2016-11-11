@@ -1,3 +1,4 @@
+import 'es6-promise/auto';
 import appy, { app } from 'wxappy';
 
 @app
