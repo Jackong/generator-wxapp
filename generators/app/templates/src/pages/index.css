@@ -1,5 +1,5 @@
-@import '../../app.css';
-@import '../../templates/button.css';
+@import '../app.css';
+@import '../templates/button.css';
 
 .user {
   display: flex;
