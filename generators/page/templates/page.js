@@ -1,4 +1,4 @@
-import appy, { page } from 'wxappy';
+import wx, { page } from 'wxappy';
 import styles from './index.css';
 
 @page
