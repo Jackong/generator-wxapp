@@ -1,5 +1,5 @@
 import 'es6-promise/auto';
-import appy, { app } from 'wxappy';
+import wx, { app } from 'wxappy';
 
 @app
 export default class {
@@ -8,8 +8,9 @@ export default class {
     if (this.data.user) {
       return Promise.resolve(this.data.user);
     }
-    return appy
-    .getUserInfo()
+    return wx
+    .login() 
+    .then(wx.getUserInfo)
     .then(({ userInfo }) => {
       this.data.user = userInfo;
       return this.data.user;
