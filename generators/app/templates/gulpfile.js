@@ -20,6 +20,11 @@ gulp.task('json', () => {
   .pipe(gulp.dest(dist));
 });
 
+gulp.task('assets', () => {
+  return gulp.src(['src/assets/**/*'], { base: 'src' })
+  .pipe(gulp.dest(dist));
+});
+
 gulp.task('xml', () => {
   return gulp.src('src/**/*.xml', { base: 'src' })
   .pipe(rename({
@@ -28,10 +33,11 @@ gulp.task('xml', () => {
   .pipe(gulp.dest(dist));
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', ['build'], () => {
   gulp.watch('src/**/*.{js,css}', ['webpack']);
   gulp.watch('src/**/*.json', ['json']);
   gulp.watch('src/**/*.xml', ['xml']);
+  gulp.watch('src/assets/**/*', ['assets']);
 });
 
-gulp.task('build', ['webpack', 'json', 'xml']);
+gulp.task('build', ['webpack', 'json', 'xml', 'assets']);

@@ -1,4 +1,4 @@
-import appy, { page } from 'wxappy';
+import wx, { page } from 'wxappy';
 import styles from './index.css';
 
 @page
@@ -15,13 +15,13 @@ export default class Index {
     };
   }
   onTap() {
-    appy.showToast({
+    wx.showToast({
       title: `Hello ${this.data.user.nickName}`,
       icon: 'success',
     });
   }
   onLoad() {
-    appy.app
+    wx.app
     .getUserInfo()
     .then((user) => {
       this.setData({ user });
